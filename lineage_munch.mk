@@ -14,6 +14,9 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from Munch device
 $(call inherit-product, device/xiaomi/munch/device.mk)
 
+# Include GMS by default, but rely on environment variable just in case we don't want to build with GMS conditionally
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+
 # Device identifiers. These must come after all inclusions.
 PRODUCT_NAME := lineage_munch
 PRODUCT_DEVICE := munch
